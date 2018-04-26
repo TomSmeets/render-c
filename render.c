@@ -35,11 +35,11 @@ static int do_events(void){
   return 1;
 }
 
-int render_frame(RenderContext *ctx, ARGB8 *buffer){
+int render_frame(RenderContext *ctx, uint8_t *argb8){
   // TODO: optional?
   SDL_RenderClear(ctx->renderer);
 
-  SDL_UpdateTexture(ctx->texture, NULL, buffer, ctx->pitch);
+  SDL_UpdateTexture(ctx->texture, NULL, argb8, ctx->pitch);
   SDL_RenderCopy(ctx->renderer, ctx->texture, 0, 0);
   SDL_RenderPresent(ctx->renderer);
 

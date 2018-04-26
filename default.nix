@@ -1,6 +1,1 @@
-{ stdenv, SDL2 }: 
-stdenv.mkDerivation {
-  name = "render-c";
-  src = ./.;
-  buildInputs = [ SDL2 ];
-}
+(import <nixpkgs> {}).callPackage ./render.nix {}
