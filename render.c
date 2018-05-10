@@ -15,6 +15,7 @@ void render_init(RenderContext *context, int width, int height){
   ctx.pitch = width * 4;
 
   ctx.input = (RenderInput) { 0 };
+  // TODO: Measure the real vsync delay
   ctx.delta_time = 1.0f / 60.0f;
   ctx.time = 0.0f;
 
@@ -29,7 +30,8 @@ void render_exit(RenderContext *ctx){
 }
 
 static void do_key(RenderInput *input, uint8_t down, uint32_t key){
-  switch(key){
+  // TODO: Add gamepad support
+  switch(key) {
     case SDLK_UP:
     case SDLK_w:
       input->move.y = down ?  1.0f : 0.0f;
